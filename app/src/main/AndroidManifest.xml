@@ -12,6 +12,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cmsc436nda"
-        tools:targetApi="31" />
+        tools:targetApi="31">
+        <!--Login Activity-->
+        <activity
+            android:label="List of Mobile OS"
+            android:name=".LogInActivity"
+            android:exported="true">
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--Home Activity-->
+        <activity
+            android:label="List of Mobile OS"
+            android:name=".HomeActivity"
+            android:exported="true">
+        </activity>
+        <!--GoNoGo Activity-->
+        <activity
+            android:label="List of Mobile OS"
+            android:name=".com.example.cmsc436_nda.GoNoGoActivity"
+            android:exported="true">
+        </activity>
+
+    </application>
 
 </manifest>
