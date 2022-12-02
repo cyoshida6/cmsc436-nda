@@ -21,6 +21,7 @@ class LogInActivity:AppCompatActivity() {
         binding.login.setOnClickListener { authenticate()  }
         binding.register.setOnClickListener { register() }
         binding.skip.setOnClickListener { startActivity(Intent(this,HomeActivity::class.java)) }
+        //test
         setContentView(binding.root);
     }
     private fun authenticate(){
