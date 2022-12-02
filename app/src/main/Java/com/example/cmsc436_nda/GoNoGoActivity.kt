@@ -4,85 +4,67 @@ import com.example.cmsc436_nda.GoNoGoViewModel
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
+import com.example.cmsc436_nda.ColorGameFragment
+import com.example.cmsc436_nda.ColorMenuFragment
+import com.example.cmsc436_nda.R
 import com.example.cmsc436_nda.databinding.ActivityGoNoGoBinding
 
 
 class GoNoGoActivity: AppCompatActivity(),LifecycleOwner {
     private lateinit var binding: ActivityGoNoGoBinding;
     private lateinit var viewModel: GoNoGoViewModel
-    private lateinit var updater:Runnable
-    private val handler= Handler(Looper.getMainLooper());
+    private lateinit var colorGameInstance: ColorGameFragment
+    private lateinit var colorMenuInstance: ColorMenuFragment
+    private var handler=Handler(Looper.getMainLooper());
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //
         binding= ActivityGoNoGoBinding.inflate(layoutInflater);
+        setContentView(binding.root);
         /*All variables related to the function of the app are updated and stored in the viewModel*/
         viewModel= ViewModelProvider(this)[GoNoGoViewModel::class.java];
-        //set starting color to be shown
-        binding.ColorView.setBackgroundColor(-viewModel.starting_color);
-        setContentView(binding.root);
-        //Initializes loop that starts changing background colors
-        startGame();
+        viewModel.observeLifeCycle(this);
+        viewModel.getInstanceOf(this);
+        viewModel.init();
+        //This is the page where stats and the ability to play the game will be
+        colorMenuInstance= ColorMenuFragment()
+        colorMenuInstance.initVM(viewModel);
+        //adding starting page to main_frame
+        supportFragmentManager.beginTransaction()
+            .add(R.id.main_frame,colorMenuInstance)
+            .commitNow()
 
     }
-    private fun startGame(){
-        //initializes viewModel properties (point, changing colors, time intervals between color changes )
-        viewModel.init();
-        //setting callbacks in activity life-cycle for viewModel to
-        viewModel.observeLifeCycle(this);
-        val start =object:Runnable{
+    //sets 10 second timer where go no go activity is running
+     fun startGame(){
+        //set game fragment as in main layout
+        showGame();
+        //This is the operation to end the game which will be delayed by 10 seconds
+         val runEndGame = object : Runnable {
             override fun run() {
-                //Get rid of starting text view ("Whenever you see this color click on it.")
-                binding.textView.visibility= View.GONE;
-                //events to occur when color is clicked on
-                binding.ColorView.setOnClickListener{onClick() };
-                //change background color when color variable is changed
-                observeColorChange();
-                //display users reaction-time to click on color every time reaction time variable changes
-                observeReactTimeChange();
-                //display points user has every time points changes
-                observePointsChange();
-                //change the background color
-                binding.ColorView.setBackgroundColor(-viewModel.color.value!!)
+               colorGameInstance.gameEnd();
+               showMenu()
             }
         }
-        handler.postDelayed(start, ONE_SECOND *3L)
-
+        //posting delayed signal to end game for 10 seconds
+        handler.postDelayed(runEndGame,GoNoGoViewModel.PRE_GAME_WAIT+GoNoGoViewModel.RUN_TIME);
     }
-    private fun onClick(){
-        //Every click check if the displayed color is the color the user is supposed to click on
-        if(viewModel.color.value==viewModel.starting_color){
-            //Raise score by 1
-            viewModel.score(1);
-        }else{
-            //Lower score by 1
-            viewModel.score(-1);
-        }
-
+    private fun showMenu(){
+        colorMenuInstance=ColorMenuFragment();
+        colorMenuInstance.initVM(viewModel);
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_frame,colorMenuInstance)
+            .commitNow();
     }
-    private fun observeReactTimeChange(){
-        viewModel.reactionTime.observe(this){
-            binding.ReactionTime.text="Reaction Time: "+viewModel.reactionTime.value!!.toString()
-        }
-    }
-    private fun observePointsChange(){
-        viewModel.points.observe(this){
-            binding.Points.text="Points: "+viewModel.points.value!!.toString()
-        }
-    }
-    private fun observeColorChange(){
-        viewModel.color.observe(this){
-            binding.ColorView.setBackgroundColor(-viewModel.color.value!!);
-        }
-    }
-
-
-
-    companion object{
-        private final const val ONE_SECOND=1000L
-        val TAG="GoNoGo Activity log(line 85)";
+    private fun showGame(){
+        colorGameInstance=ColorGameFragment();
+        colorGameInstance.initVM(viewModel);
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_frame,colorGameInstance)
+            .commitNow();
     }
 }

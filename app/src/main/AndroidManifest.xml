@@ -28,14 +28,12 @@
             android:label="List of Mobile OS"
             android:name=".HomeActivity"
             android:exported="true">
-
         </activity>
         <!--GoNoGo Activity-->
         <activity
             android:label="List of Mobile OS"
             android:name=".com.example.cmsc436_nda.GoNoGoActivity"
             android:exported="true">
-
         </activity>
 
     </application>

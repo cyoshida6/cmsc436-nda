@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/activity_go_no_go.xml" value="0.12082066869300911" />
-        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/activity_home.xml" value="0.176" />
-        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/login.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/activity_go_no_go.xml" value="0.136" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/activity_home.xml" value="0.11041666666666666" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/fragment_color_game.xml" value="0.176" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/fragment_color_menu.xml" value="0.72" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/fragment_go_no_go.xml" value="0.109375" />
       </map>
     </option>
   </component>
