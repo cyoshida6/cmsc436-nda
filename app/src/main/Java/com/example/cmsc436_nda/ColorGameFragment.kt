@@ -94,7 +94,7 @@ class ColorGameFragment:Fragment() {
 
     companion object{
 
-        private const val ACCELERATION=120;
+        private const val ACCELERATION=60;
         val TAG="GoNoGo Activity log(line 85)";
     }
 }

@@ -3,37 +3,53 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/material_dynamic_primary10">
 
     <TextView
         android:id="@+id/ReactionTime"
-        android:layout_width="177dp"
-        android:layout_height="67dp"
-        android:layout_marginEnd="4dp"
+        android:layout_width="347dp"
+        android:layout_height="51dp"
+        android:fontFamily="monospace"
         android:text="Average Reaction Time: -1"
+        android:textColor="@color/white"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Points"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Points" />
 
     <TextView
         android:id="@+id/Points"
         android:layout_width="176dp"
         android:layout_height="64dp"
         android:layout_marginStart="4dp"
+        android:fontFamily="monospace"
         android:text="Points: 0"
+        android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/start_button"
-        android:text="Start Go No Go"
         android:layout_width="160dp"
         android:layout_height="67dp"
+        android:text="Start Go No Go"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/HealthReport"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:text="Play to determine your eveluated health"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

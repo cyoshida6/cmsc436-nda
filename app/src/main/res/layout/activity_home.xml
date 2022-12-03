@@ -3,10 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/material_dynamic_primary10">
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="296dp"
+        android:layout_height="61dp"
+        android:paddingTop="20dp"
+        android:text="Nuerdiognostic App"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/startGoNoGo"
@@ -18,5 +28,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="70dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img"
+        tools:layout_editor_absoluteX="7dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
