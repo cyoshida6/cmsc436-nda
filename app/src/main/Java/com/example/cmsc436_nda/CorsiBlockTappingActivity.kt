@@ -20,6 +20,25 @@ class CorsiBlockTappingActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[CBTViewModel::class.java]
         viewModel.observeLifeCycle(this)
+        viewModel.getInstanceOf(this)
+        viewModel.init()
 
+        showMenu()
+    }
+
+    fun showMenu(){
+        CBTMenuInstance = CBTMenuFragment()
+        CBTMenuInstance.initViewModel(viewModel)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_frame,CBTMenuInstance)
+            .commitNow()
+    }
+
+    fun showGame(){
+        CBTGameInstance = CBTGameFragment()
+        CBTGameInstance.initViewModel(viewModel)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_frame,CBTGameInstance)
+            .commitNow()
     }
 }

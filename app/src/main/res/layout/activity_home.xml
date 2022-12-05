@@ -9,14 +9,15 @@
     <TextView
         android:layout_width="296dp"
         android:layout_height="61dp"
+        android:layout_marginStart="4dp"
         android:paddingTop="20dp"
-        android:text="Nuerdiognostic App"
+        android:text="Neurological Diagnostic Aid"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="23dp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteY="14dp"
         tools:ignore="MissingConstraints" />
 
     <Button
