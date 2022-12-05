@@ -3,11 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/drawable/box.xml" value="0.1" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/drawable/boxpurp.xml" value="0.1" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/drawable/boxred.xml" value="0.1" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/activity_corsi_block_tapping.xml" value="0.1171875" />
         <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/activity_go_no_go.xml" value="0.136" />
-        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/activity_trail_making.xml" value="0.1" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/fragment_c_b_t_game.xml" value="0.24728260869565216" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/fragment_c_b_t_menu.xml" value="0.24728260869565216" />
         <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/fragment_color_game.xml" value="0.1" />
-        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/fragment_color_menu.xml" value="0.2" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/fragment_color_menu.xml" value="0.1" />
         <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/fragment_go_no_go.xml" value="0.109375" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/fragment_trailmaking_game.xml" value="0.1" />
+        <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/fragment_trailmaking_menu.xml" value="0.10885416666666667" />
         <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/login.xml" value="0.14175724637681159" />
       </map>
     </option>

@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cmsc436nda"
         tools:targetApi="31">
+        <activity
+            android:name=".CorsiBlockTappingActivity"
+            android:exported="false"
+            android:label="Corsi-Block Tapping"/>
         <!--Login Activity-->
         <activity
             android:label="List of Mobile OS"
@@ -27,6 +31,12 @@
         <activity
             android:label="List of Mobile OS"
             android:name=".HomeActivity"
+            android:exported="true">
+        </activity>
+        <!--Trailmaking Activity-->
+        <activity
+            android:label="List of Mobile OS"
+            android:name=".TrailMakingActivity"
             android:exported="true">
         </activity>
         <!--GoNoGo Activity-->

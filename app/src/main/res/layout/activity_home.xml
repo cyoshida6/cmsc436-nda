@@ -10,7 +10,7 @@
         android:layout_width="296dp"
         android:layout_height="61dp"
         android:paddingTop="20dp"
-        android:text="Nuerdiognostic App"
+        android:text="Nuerodiagnostic App"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="30dp"
@@ -28,6 +28,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/startTrailMaking"
+        android:layout_width="317dp"
+        android:layout_height="65dp"
+        android:text="Start TrailMaking"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.597" />
+
+    <Button
+        android:id="@+id/startCorsiBlockTapping"
+        android:layout_width="317dp"
+        android:layout_height="65dp"
+        android:text="Start Corsi-Block Tapping"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.695" />
 
     <ImageView
         android:id="@+id/imageView"
