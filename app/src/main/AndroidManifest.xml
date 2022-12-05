@@ -13,29 +13,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cmsc436nda"
         tools:targetApi="31">
-        <!--Login Activity-->
         <activity
-            android:label="List of Mobile OS"
+            android:name=".CorsiBlockTappingActivity"
+            android:exported="false" />
+        <!-- Login Activity -->
+        <activity
             android:name=".LogInActivity"
-            android:exported="true">
-            <intent-filter >
+            android:exported="true"
+            android:label="List of Mobile OS">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!--Home Activity-->
+        </activity> <!-- Home Activity -->
         <activity
-            android:label="List of Mobile OS"
             android:name=".HomeActivity"
-            android:exported="true">
-        </activity>
-        <!--GoNoGo Activity-->
+            android:exported="true"
+            android:label="List of Mobile OS"></activity> <!-- GoNoGo Activity -->
         <activity
-            android:label="List of Mobile OS"
             android:name=".com.example.cmsc436_nda.GoNoGoActivity"
-            android:exported="true">
-        </activity>
-
+            android:exported="true"
+            android:label="List of Mobile OS"></activity>
     </application>
 
 </manifest>

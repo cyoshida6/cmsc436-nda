@@ -6,6 +6,7 @@ import androidx.lifecycle.LifecycleOwner
 import com.example.cmsc436_nda.databinding.ActivityHomeBinding
 import android.content.Intent
 import android.util.Log
+import android.view.View
 import com.example.cmsc436_nda.com.example.cmsc436_nda.GoNoGoActivity
 
 class HomeActivity:AppCompatActivity(),LifecycleOwner {
@@ -15,11 +16,16 @@ class HomeActivity:AppCompatActivity(),LifecycleOwner {
         super.onCreate(savedInstanceState)
         binding= ActivityHomeBinding.inflate(layoutInflater);
         binding.startGoNoGo.setOnClickListener { startGoNoGo() }
+        binding.startCorsiBlockTapping.setOnClickListener{ startCorsiBlockTapping()}
         setContentView(binding.root);
     }
 
     private fun startGoNoGo(){
         val intent=Intent(this, GoNoGoActivity::class.java);
+        startActivity(intent);
+    }
+    private fun startCorsiBlockTapping(){
+        val intent = Intent(this, CorsiBlockTappingActivity::class.java);
         startActivity(intent);
     }
 

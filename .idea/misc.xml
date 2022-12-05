@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/cyoshida6/cmsc436-nda/app/src/main/res/layout/activity_corsi_block_tapping.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/cyoshida6/cmsc436-nda/app/src/main/res/layout/activity_go_no_go.xml" value="0.1" />
+        <entry key="..\:/Users/cyoshida6/cmsc436-nda/app/src/main/res/layout/activity_home.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/cyoshida6/cmsc436-nda/app/src/main/res/layout/fragment_c_b_t_game.xml" value="0.1" />
         <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/activity_go_no_go.xml" value="0.136" />
         <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/activity_home.xml" value="0.11041666666666666" />
         <entry key="..\:/Users/joshk/programming/cmsc436/cmsc436-nda/app/src/main/res/layout/fragment_color_game.xml" value="0.176" />
