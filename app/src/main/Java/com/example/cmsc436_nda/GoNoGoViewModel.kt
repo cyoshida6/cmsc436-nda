@@ -17,12 +17,13 @@ class GoNoGoViewModel:ViewModel(), DefaultLifecycleObserver {
     private var reccurance = 0;
     private var colorTime = System.currentTimeMillis();
     private val handler = Handler(Looper.getMainLooper())
+
+    //Mutable Live Data in View Model
     private var m_reactionTime = MutableLiveData<Long>();
     private var m_points = MutableLiveData<Int>();
     private var m_t_interval = MutableLiveData<Long>();
     private var m_color = MutableLiveData<Int>();
-
-
+    //Associated Live Data in ViewModel
     internal val reactionTime: LiveData<Long>
         get() = m_reactionTime
     internal val color: LiveData<Int>
@@ -37,7 +38,7 @@ class GoNoGoViewModel:ViewModel(), DefaultLifecycleObserver {
     fun init() {
         m_points.value = 0;
         m_color.value = random_generator.nextInt(0xFFFFFF);
-        //switching colors every 1600 ms
+        //switching colors every 600 ms
         m_t_interval.value = ONE_SECOND - 400;
     }
     //observe the liefcycle owner's life cycle
@@ -125,6 +126,7 @@ class GoNoGoViewModel:ViewModel(), DefaultLifecycleObserver {
         // before the starting color is shown again
         private const val MAX_RECCURANCE = 10;
         const val RUN_TIME= ONE_SECOND *25L;
-        const val PRE_GAME_WAIT= ONE_SECOND*4L
+        const val PRE_GAME_WAIT= ONE_SECOND*4L;
+        const val AVERAGE_PERSON_REACTION=600L;
     }
 }

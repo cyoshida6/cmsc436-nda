@@ -20,7 +20,7 @@ class LogInActivity:AppCompatActivity() {
         firebaseAuth= requireNotNull(FirebaseAuth.getInstance());
         binding.login.setOnClickListener { authenticate()  }
         binding.register.setOnClickListener { register() }
-        binding.skip.setOnClickListener { startActivity(Intent(this,HomeActivity::class.java)) }
+        binding.skip.setOnClickListener { startActivity(Intent(this,HomeActivity::class.java))};
         //test
         setContentView(binding.root);
     }

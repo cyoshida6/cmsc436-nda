@@ -21,6 +21,14 @@ class ColorMenuFragment: Fragment() {
         }
         binding.Points.text="Points: "+viewModel.points.value.toString();
         binding.ReactionTime.text="Average Reaction Time: "+viewModel.calc_avg_reaction_time().toString();
+        var usrReactionTime = viewModel.calc_avg_reaction_time();
+        if(usrReactionTime!=-1){
+            if(viewModel.points.value!!>=3 ){
+                binding.HealthReport.text="Performance: Healthy"
+            }else{
+                binding.HealthReport.text="Performance: Poor"
+            }
+        }
         return binding.root;
     }
     fun initVM(viewModel:GoNoGoViewModel){
