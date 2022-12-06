@@ -6,7 +6,11 @@ import androidx.lifecycle.LifecycleOwner
 import com.example.cmsc436_nda.databinding.ActivityHomeBinding
 import android.content.Intent
 import android.util.Log
+
 import android.widget.*
+
+import android.view.View
+
 import com.example.cmsc436_nda.com.example.cmsc436_nda.GoNoGoActivity
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -21,9 +25,13 @@ class HomeActivity:AppCompatActivity(),LifecycleOwner {
         super.onCreate(savedInstanceState)
         binding= ActivityHomeBinding.inflate(layoutInflater);
         binding.startGoNoGo.setOnClickListener { startGoNoGo() }
+
         binding.startTrailMaking.setOnClickListener { startTrailMaking() }
        // binding.startCorsiBlockTapping.setOnClickListener{ startCorsiBlockTapping()}
         addUser(Firebase.auth.currentUser);
+
+        binding.startCorsiBlockTapping.setOnClickListener{ startCorsiBlockTapping()}
+
         setContentView(binding.root);
     }
 
@@ -31,12 +39,16 @@ class HomeActivity:AppCompatActivity(),LifecycleOwner {
         val intent=Intent(this, GoNoGoActivity::class.java);
         startActivity(intent);
     }
+
     private fun startTrailMaking(){
         val intent=Intent(this, TrailMakingActivity::class.java);
         startActivity(intent);
     }
 
-
+    private fun startCorsiBlockTapping(){
+        val intent=Intent(this, CorsiBlockTappingActivity::class.java);
+        startActivity(intent);
+    }
 
 
     private fun checkLoggedIn(){
@@ -49,9 +61,9 @@ class HomeActivity:AppCompatActivity(),LifecycleOwner {
     }
     private fun addUser(user: FirebaseUser?) {
         var firebaseUserId =
-            if(user!=null){
+            if (user != null) {
                 user.uid
-            }else{
+            } else {
                 //the user is a guest/hasn't logged in
                 "0";
             }

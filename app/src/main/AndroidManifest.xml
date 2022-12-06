@@ -13,24 +13,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cmsc436nda"
         tools:targetApi="31">
+
+
         <activity
             android:name=".CorsiBlockTappingActivity"
             android:exported="false"
             android:label="Corsi-Block Tapping"/>
-        <!--Login Activity-->
+        <!-- Login Activity -->
         <activity
-            android:label="List of Mobile OS"
             android:name=".LogInActivity"
-            android:exported="true">
-            <intent-filter >
+            android:exported="true"
+            android:label="Neurological Diagnostic Aid">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!--Home Activity-->
+        </activity> <!-- Home Activity -->
         <activity
-            android:label="List of Mobile OS"
             android:name=".HomeActivity"
+
             android:exported="true">
         </activity>
         <!--Trailmaking Activity-->
@@ -40,12 +42,13 @@
             android:exported="true">
         </activity>
         <!--GoNoGo Activity-->
-        <activity
-            android:label="List of Mobile OS"
-            android:name=".com.example.cmsc436_nda.GoNoGoActivity"
-            android:exported="true">
-        </activity>
 
+        <activity
+            android:name=".com.example.cmsc436_nda.GoNoGoActivity"
+            android:exported="true"
+            android:label="Go No Go">
+
+        </activity>
     </application>
 
 </manifest>

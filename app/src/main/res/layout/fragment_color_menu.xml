@@ -43,7 +43,7 @@
         android:id="@+id/HealthReport"
         android:layout_width="match_parent"
         android:layout_height="68dp"
-        android:text="Play to determine your eveluated health"
+        android:text="Play to determine your evaluated health"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20dp"
