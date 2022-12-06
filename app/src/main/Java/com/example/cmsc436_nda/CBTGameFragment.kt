@@ -20,6 +20,7 @@ class CBTGameFragment : Fragment() {
     private val handler = Handler(Looper.getMainLooper());
     private lateinit var sequence: ArrayList<Int>
     private lateinit var buttons: Array<Button>
+    private var start: Long? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentCBTGameBinding.inflate(inflater, container, false)
@@ -39,59 +40,58 @@ class CBTGameFragment : Fragment() {
         viewModel.init()
         val start = Runnable {
             binding.round.text = getString(R.string.cbt_round).format(viewModel.score.value)
-            Log.w("PPOOPOPOPPOPO", "ADSSPAD")
-            while (true){ if (!round()) { break } }
-            while (true){ if (!round()) { break } }
+            round()
 //            if (viewModel.score.value > HIGH SCORE){
 //                UPDATE HIGH SCORE
 //            }
-            viewModel.mainActivity.showMenu()
+//            viewModel.mainActivity.showMenu()
         }
         handler.postDelayed(start, 1000)
     }
 
     private fun round(): Boolean {
-        Log.w("PPOOPOdsclbdslkcdsacPOPPOPO", "ADSSPAD")
         val score = viewModel.score.value
-        val start= System.currentTimeMillis()
+        start = System.currentTimeMillis()
         createSequence(min(viewModel.score.value!! + 2, 9))
         buttons.forEachIndexed {i, button ->
             button.setOnClickListener {
                 handleButton(i+1, button)
-                Log.w("PPOOPOPOPPOPO", "ADSSPAD")
             }
         }
+        Log.w("PPOOPOPOPPOPO", sequence.toString())
+
+
+
 //        waitUntil(sequence.size > 0){ }
-        viewModel.addRound(Pair(viewModel.score.value!!, ((System.currentTimeMillis()-start)/1000.0f)))
+        viewModel.addRound(Pair(viewModel.score.value!!, ((System.currentTimeMillis()- start!!)/1000.0f)))
         buttons.forEach {button ->
             button.setOnClickListener(null)
         }
         binding.round.text = getString(R.string.cbt_round).format(viewModel.score.value)
-        if (viewModel.score.value == score) return false
+//        if (viewModel.score.value == score) return false
         return true
     }
 
-    fun handleButton(buttonNum: Int, button: Button){
+    private fun handleButton(buttonNum: Int, button: Button){
         if (buttonNum == sequence.get(0)){
             sequence.removeFirst()
-            buttonPurple(button)
-            if (sequence.size == 0) viewModel.addScore()
+            if (sequence.size == 0){
+                viewModel.addScore()
+                viewModel.addRound(Pair(viewModel.score.value!!, ((System.currentTimeMillis()- start!!)/1000.0f)))
+                buttons.forEach {button ->
+                    button.setOnClickListener(null)
+                }
+                binding.round.text = getString(R.string.cbt_round).format(viewModel.score.value)
+            }
         }
         else{
             sequence.clear()
-            buttonRed(button)
+            viewModel.addRound(Pair(viewModel.score.value!!, ((System.currentTimeMillis()- start!!)/1000.0f)))
+            buttons.forEach {button ->
+                button.setOnClickListener(null)
+            }
+            binding.round.text = getString(R.string.cbt_round).format(viewModel.score.value)
         }
-    }
-
-    private fun buttonPurple(button: Button){
-        button.setBackgroundResource(R.drawable.boxpurp)
-        TimeUnit.MILLISECONDS.sleep(100)
-        button.setBackgroundResource(R.drawable.box)
-    }
-    private fun buttonRed(button: Button){
-        button.setBackgroundResource(R.drawable.boxred)
-        TimeUnit.MILLISECONDS.sleep(100)
-        button.setBackgroundResource(R.drawable.box)
     }
 
     private fun createSequence(count: Int){
@@ -99,7 +99,7 @@ class CBTGameFragment : Fragment() {
         for (i in 1..count){
             val num = Random.nextInt(1,9)
             sequence.add(num)
-            buttonPurple(buttons[num - 1])
+            //////
         }
         this.sequence = sequence
     }

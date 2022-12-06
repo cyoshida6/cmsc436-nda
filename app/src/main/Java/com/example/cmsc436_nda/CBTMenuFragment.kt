@@ -21,7 +21,7 @@ class CBTMenuFragment : Fragment() {
             for (i in viewModel.rounds.value!!){
                 temp += getString(R.string.cbt_report_line).format(i.first,i.second)
             }
-            binding.report.text = getString(R.string.cbt_report).format()
+            binding.report.text = getString(R.string.cbt_report)
         }
         binding.startButton.setOnClickListener{
             viewModel.mainActivity.showGame()
